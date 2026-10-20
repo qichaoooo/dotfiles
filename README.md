@@ -1,37 +1,64 @@
 # My dotfiles
-Personal configuration files, managed with symlinks. 
+Personal configuration files, managed with symlinks.
 
-## you can do these in addr $PWD
-**To check dotfiles which could install**
+## Usage
 
-	./scripts/gen-filelist.sh
+Run these at dotfiles/ (so .stowrc is picked up).
 
-**To check ./bash/ linked state before install**
+**To list all available dotfiles**
 
-	stow -n -vv bash
-if the output contains "LINK: * => * " means not installed
+```bash
+./scripts/gen-filelist.sh
+```
+**To check the linked state of packages before install**
 
-**To install ./bash links to $HOME**
+```bash
+stow -n -vv bash git vim tmux
+sudo stow -n -vv --target=/ ssh
+```
 
-	stow bash
+If the output contains "LINK: * => * ", it indicates the package is not yet installed.
 
-**To remove the symlinks ./bash created in $HOME**
+**To install links to $HOME**
 
-	stow -D bash
+```bash
+stow bash git vim tmux
+```
 
-**To update link state**
+For config files outside $HOME (e.g., system configs), specify --target:
 
-	stow -R bash
+```bash
+sudo stow --target=/ ssh
+```
 
-### ⚠️DANGER BEHAVIORS
-**To move real dotfiles from $HOME into ./bash/, OVERWRITING**
+**To remove the symlinks created by a package**
 
-	stow --adopt bash
-the real dotfiles from $HOME will be move
+```bash
+stow -D bash git vim tmux
+sudo stow -D --target=/ ssh
+```
 
-the same-named source files will be overwritten, not combined
+**To update the link state** (after adding or removing files in a package)
+
+```bash
+stow -R bash git vim tmux
+sudo stow -R --target=/ ssh
+```
+
+### ⚠️ DANGER BEHAVIORS
+
+**To move real dotfiles from $HOME into ./bash/, OVERWRITING the repo**
+
+```bash
+stow --adopt bash
+```
+
+The real dotfiles from $HOME will be moved. The same-named source files in the repo will be overwritten, not combined.
 
 ## Notice
-.vimrc use third-party GitHub proxy
 
-	let g:plug_url_format = 'https://ghproxy.net/https://github.com/%s.git'
+A third-party GitHub proxy is used in .vimrc for vim-plug:
+
+```vim
+let g:plug_url_format = 'https://ghproxy.net/https://github.com/%s.git'
+```
