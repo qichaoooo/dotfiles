@@ -1,0 +1,30 @@
+alias turnoff='sudo poweroff'
+alias ty='tmux new -A -s ysyx'
+alias saveas='col -b >'
+alias manualcommit='~/ysyx-workbench/manualcommit.sh'
+
+marco() {
+    MARCO_DIR="$PWD"
+}
+
+polo() {
+    if [ -z "$MARCO_DIR" ]; then
+        echo "polo: 请先执行 marco" >&2
+        return 1
+    fi
+    POLO_DIR="$PWD"
+    cd "$MARCO_DIR" || return
+}
+
+unpolo() {
+    if [ -z "$POLO_DIR" ]; then
+        echo "unpolo: 请先执行 polo" >&2
+        return 1
+    fi
+    local tmp="$PWD"
+    cd "$POLO_DIR" || return
+    POLO_DIR="$tmp"
+}
+
+# 关闭tty流控制
+stty -ixon

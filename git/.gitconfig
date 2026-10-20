@@ -1,0 +1,10 @@
+[user]
+	name = chao
+	email = 333778757+qichaoooo@users.noreply.github.com
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	editor = vim
+[color]
+	ui = true
