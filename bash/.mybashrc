@@ -2,6 +2,7 @@ alias turnoff='sudo poweroff'
 alias ty='tmux new -A -s ysyx'
 alias saveas='col -b >'
 alias manualcommit='~/ysyx-workbench/manualcommit.sh'
+alias readinVim='vim -R -'
 
 marco() {
     MARCO_DIR="$PWD"
