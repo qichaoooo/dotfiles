@@ -6,6 +6,7 @@
 [core]
 	autocrlf = input
 	editor = vim
+	excludesfile = /home/chao/.gitignore_global
 [color]
 	ui = true
 [alias]
