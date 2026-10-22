@@ -1,3 +1,4 @@
+# 忽略私人密钥
 id_rsa
 id_dsa
 id_ecdsa
@@ -6,3 +7,14 @@ id_ed25519
 *.key
 *.p12
 *.pfx
+
+# Vim 临时交换文件
+*.swp
+*.swo
+*.swn
+
+# Vim 备份文件（以 ~ 结尾）
+*~
+
+# Vim 持久化撤销文件
+*.un~
