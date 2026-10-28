@@ -32,3 +32,6 @@ stty -ixon
 
 # 将 Vim 设为 man 的默认分页器
 export MANPAGER="vim -M +MANPAGER -"
+
+#set shell color
+source ~/.Color_zenbones_dark

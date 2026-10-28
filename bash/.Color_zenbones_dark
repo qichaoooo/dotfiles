@@ -1,0 +1,23 @@
+# === 应用 zenbones_dark 配色方案 (全场景版) ===
+
+# 1. 配置 PS1 提示符（状态绿/红，路径亮蓝）
+PS1='${debian_chroot:+($debian_chroot)}\[\e[38;2;139;174;104m\]\u@\h\[\e[m\]:\[\e[1;38;2;96;153;192m\]\w\[\e[m\]\$ '
+
+# 2. 配置 ls 颜色 (继承系统默认 + 覆盖 zenbones 色系)
+eval "$(dircolors -b)"
+export LS_COLORS="$LS_COLORS:di=38;2;96;153;192:ln=38;2;102;165;173:ex=38;2;139;174;104:*.tar=38;2;232;131;143:*.tgz=38;2;232;131;143:*.zip=38;2;232;131;143:*.jpg=38;2;178;121;167:*.png=38;2;178;121;167"
+alias ls='ls --color=auto'
+alias ll='ls -lAF --color=auto'
+
+# 3. 配置 grep 搜索结果高亮
+export GREP_COLORS='ms=01;38;2;232;131;143:mc=01;38;2;139;174;104:sl=:cx=:fn=38;2;96;153;192:ln=38;2;178;121;167:bn=38;2;183;126;100:se=38;2;102;165;173'
+alias grep='grep --color=auto'
+
+# 4. 配置 less 阅读器颜色 (man 手册或查看代码时)
+export LESS_TERMCAP_mb=$'\e[1;38;2;232;131;143m' # 闪烁
+export LESS_TERMCAP_md=$'\e[1;38;2;96;153;192m'  # 加粗 (如手册标题)
+export LESS_TERMCAP_me=$'\e[0m'                  # 结束
+export LESS_TERMCAP_so=$'\e[1;38;2;183;126;100m' # 搜索高亮
+export LESS_TERMCAP_se=$'\e[0m'                  # 结束搜索
+export LESS_TERMCAP_us=$'\e[1;38;2;178;121;167m' # 下划线
+export LESS_TERMCAP_ue=$'\e[0m'                  # 结束下划线
