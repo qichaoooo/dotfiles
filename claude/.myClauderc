@@ -1,0 +1,16 @@
+# ---- Claude Code → DeepSeek ----
+export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+source ~/.api
+export ANTHROPIC_MODEL=deepseek-flash
+export ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-flash
+export ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-flash
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-flash
+export CLAUDE_CODE_SUBAGENT_MODEL=deepseek-flash
+export CLAUDE_CODE_EFFORT_LEVEL=max
+
+# ↓ 这两行就是 1M 的答案
+export CLAUDE_CODE_MAX_CONTEXT_TOKENS=1000000
+export CLAUDE_CODE_AUTO_COMPACT_WINDOW=900000
+
+# 多步任务列待办
+export CLAUDE_CODE_ENABLE_TODO_TOOLS=1

@@ -13,7 +13,7 @@ Run these at dotfiles/ (so .stowrc is picked up).
 **To check the linked state of packages before install**
 
 ```bash
-stow -n -vv bash git vim tmux
+stow -n -vv bash git vim tmux claude
 sudo stow -n -vv --target=/ ssh
 ```
 
@@ -22,7 +22,7 @@ If the output contains "LINK: * => * ", it indicates the package is not yet inst
 **To install links to $HOME**
 
 ```bash
-stow bash git vim tmux
+stow bash git vim tmux claude
 ```
 
 For config files outside $HOME (e.g., system configs), specify --target:
@@ -34,14 +34,14 @@ sudo stow --target=/ ssh
 **To remove the symlinks created by a package**
 
 ```bash
-stow -D bash git vim tmux
+stow -D bash git vim tmux claude
 sudo stow -D --target=/ ssh
 ```
 
 **To update the link state** (after adding or removing files in a package)
 
 ```bash
-stow -R bash git vim tmux
+stow -R bash git vim tmux claude
 sudo stow -R --target=/ ssh
 ```
 

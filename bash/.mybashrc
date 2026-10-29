@@ -3,6 +3,9 @@ alias ty='tmux new -A -s ysyx'
 alias saveas='col -b >'
 alias manualcommit='~/ysyx-workbench/manualcommit.sh'
 alias readinVim='vim -R -'
+alias dfy='dsh --profile tui --resume'
+alias md='glow ~'
+alias st='cd ~/ysyx-workbench/E3/C_hard_way'
 
 marco() {
     MARCO_DIR="$PWD"
@@ -34,4 +37,7 @@ stty -ixon
 export MANPAGER="vim -M +MANPAGER -"
 
 #set shell color
-source ~/.Color_zenbones_dark
+#source ~/.Color_zenbones_dark
+
+#set Claude->deepseek
+source ~/.myClauderc
